@@ -7,6 +7,16 @@ Peta koneksi
 
 ![image](https://github.com/user-attachments/assets/213d96c3-f8b7-4db5-96b1-607c25e38d71)
 
+Hasil desain PCB:
+
+Tampak bawah:
+
+![image](https://github.com/user-attachments/assets/81e9ae7a-c2b7-4c75-8271-1d56c0955975)
+
+Tampak atas:
+
+![image](https://github.com/user-attachments/assets/19f89f37-dbe7-4766-bc7b-5b2adfc76da6)
+
 DIAGRAM SISTEM
 
 ![image](https://github.com/user-attachments/assets/e3545708-e1d0-4b24-80e6-9357fcf48d4f)

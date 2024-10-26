@@ -63,7 +63,7 @@ Jika Sensor gagal terinisialisasi:
 
 [PENJELASAN HASIL SENSOR TESTING]
 
-[TAMBAHIN PENJELASAN TENTANG UI/UX YANG DIBUAT]
+[TAMBAHIN PENJELASAN TENTANG UI/UX YANG DIBUAT (kalau bisa tambahin gambarnya juga)]
 
 
 

@@ -1,15 +1,13 @@
 # Safe Baby Watch 
 Merupakan proyek SmartWatch Pemantau Kesehatan Bayi ini adalah memberikan solusi kesehatan yang inovatif untuk memantau kondisi kesehatan bayi secara real-time. Proyek ini bertujuan untuk membantu orang tua dan pengasuh dalam mendeteksi dini masalah kesehatan bayi, sehingga mereka dapat mengambil tindakan pencegahan atau perawatan yang tepat dengan cepat. Dengan menggunakan teknologi IoT, alat ini memungkinkan pemantauan kesehatan bayi yang lebih praktis, efisien, dan akurat, sehingga memberikan ketenangan bagi orang tua dalam menjaga kesejahteraan bayi mereka.
 
-[CARA KERJA SISTEM DENGAN PETA KONEKSI DAN DIAGRAM SISTEM]
-
-Sensor MAX30105 mendeteksi detak jantung dan kadar oksigen dalam darah bayi dan Sensor MLX90614 memantau suhu tubuh bayi tanpa kontak langsung **-->** Pemrosesan dan Tampilan Data dari sensor diproses oleh modul ESP12 **-->** Layar OLED menampilkan informasi suhu dan detak jantung secara langsung **-->** Jika terdeteksi kondisi abnormal, sistem mengirimkan notifikasi **-->** Data dikirimkan melalui WiFi ke aplikasi mobile untuk pemantauan jarak jauh dan real-time **-->** Diagram menunjukkan koneksi dari sensor ke ESP12 dan aliran data menuju aplikasi.
+Sistem Safe Baby Watch bekerja dengan sensor MAX30102 yang mendeteksi detak jantung (HR) dan kadar oksigen dalam darah bayi (SPO2), sedangkan sensor GY906 mengukur suhu tubuh bayi  tanpa kontak fisik sensor melalui jam tangan yang terkoneksi dengan internet melalui ESP 12. Data yang dikumpulkan dari kedua sensor ini kemudian diproses oleh modul ESP12, yang berfungsi sebagai pusat pemrosesan data dalam sistem. Layar OLED pada perangkat menampilkan informasi detak jantung dan suhu tubuh bayi secara real-time, memudahkan pemantauan langsung. Jika sistem mendeteksi adanya kondisi abnormal, seperti peningkatan suhu atau perubahan signifikan dalam detak jantung atau turunnya saturasi oksigen, notifikasi otomatis akan dikirimkan sebagai peringatan melalui ponsel pintar yang terkoneksi. Data ini juga dikirimkan melalui koneksi WiFi ke tambilan mobile, memungkinkan pemantauan jarak jauh dan real-time oleh orang tua atau pengasuh. Diagram sistem ini memberikan gambaran jelas tentang koneksi antara sensor dan ESP12, serta aliran data menuju aplikasi untuk pemantauan.
 
 Peta koneksi 
 
 ![image](https://github.com/user-attachments/assets/213d96c3-f8b7-4db5-96b1-607c25e38d71)
 
-Hasil desain PCB:
+PCB yang telah dicetak didokumentasikan dengan hasil cetak desain PCB berikut:
 
 Tampak bawah:
 
@@ -23,33 +21,65 @@ DIAGRAM SISTEM
 
 ![image](https://github.com/user-attachments/assets/e3545708-e1d0-4b24-80e6-9357fcf48d4f)
 
-[PENJELASAN KOMPONEN DARI MASING2 KOMPONEN DALAM GAMBAR KERJA SISTEM]
-
-Berikut penjelasan dari fungsi masing-masing komponen yang digunakan dalam proyek **Safe Baby Watch** (alat pemantauan kesehatan bayi berbasis IoT):
+Safe Baby Watch secara garis besar memiliki komponen penting seperti kontroller dan perangkat sensing sebagai berikut:
 
 1. **ESP12**:
-   - ESP12 adalah modul berbasis microcontroller ESP8266 yang memiliki kemampuan Wi-Fi, sehingga dapat mengirim dan menerima data secara nirkabel melalui internet. Pada proyek Safe Baby Watch, ESP12 digunakan sebagai otak utama yang mengumpulkan data dari berbagai sensor, memprosesnya, dan mengirimkan data tersebut ke aplikasi atau platform IoT. Hal ini memungkinkan pemantauan jarak jauh terhadap kondisi kesehatan bayi.
-
-2. **Sensor MAX30105**:
-   - MAX30105 adalah sensor optik yang dapat mendeteksi detak jantung dan kadar oksigen dalam darah. Sensor ini bekerja dengan memancarkan cahaya dan mendeteksi refleksi cahaya tersebut dari pembuluh darah di kulit. Pada proyek ini, MAX30105 berguna untuk memantau detak jantung dan saturasi oksigen bayi, sehingga dapat mendeteksi tanda-tanda vital dan memastikan bayi dalam kondisi yang aman.
-
-3. **Sensor MLX90614**:
-   - MLX90614 adalah sensor inframerah yang dapat mengukur suhu tanpa kontak fisik (non-contact). Ini memungkinkan pengukuran suhu tubuh bayi dari jarak dekat, tanpa perlu menyentuh kulit bayi, yang sangat penting untuk kenyamanan dan keamanan. Di proyek ini, MLX90614 digunakan untuk memantau suhu tubuh bayi secara real-time dan mendeteksi potensi demam atau perubahan suhu yang signifikan.
-
-4. **OLED 0.96**:
-   - OLED 0.96 adalah layar kecil berukuran 0.96 inci yang menggunakan teknologi OLED (Organic Light Emitting Diode). Layar ini memiliki tampilan yang jernih dan kontras tinggi sehingga cocok untuk menampilkan informasi penting dalam ruang yang terbatas. Dalam proyek ini, OLED 0.96 digunakan untuk menampilkan data seperti detak jantung, kadar oksigen, dan suhu bayi secara langsung, memudahkan pemantauan oleh pengguna di lokasi yang sama.
-
-Komponen-komponen ini bekerja bersama-sama untuk memantau kondisi kesehatan bayi secara real-time, memberikan peringatan dini jika ada anomali, dan memungkinkan pemantauan jarak jauh oleh orang tua atau pengasuh melalui internet.
-
-[PENJELASAN ESP 12: Pin I/O dll]
 
 ![image](https://github.com/user-attachments/assets/01c10f11-8491-4afe-9a1a-e402481b7fd1)
 
-[PENJELASAN SENSOR GY-906]
+ESP12 adalah modul berbasis microcontroller ESP8266 yang memiliki kemampuan Wi-Fi, sehingga dapat mengirim dan menerima data secara nirkabel melalui internet. Pada proyek Safe Baby Watch, ESP12 digunakan sebagai otak utama yang mengumpulkan data dari berbagai sensor, memprosesnya, dan mengirimkan data tersebut ke aplikasi atau platform IoT. Hal ini memungkinkan pemantauan jarak jauh terhadap kondisi kesehatan bayi.
 
-Flowchart pengambilan datasensor GY-906
+3. **Sensor MAX30105**:
+   
+MAX30105 adalah sensor optik yang dapat mendeteksi detak jantung dan kadar oksigen dalam darah. Sensor ini bekerja dengan memancarkan cahaya dan mendeteksi refleksi cahaya tersebut dari pembuluh darah di kulit. Pada proyek ini, MAX30105 berguna untuk memantau detak jantung dan saturasi oksigen bayi, sehingga dapat mendeteksi tanda-tanda vital dan memastikan bayi dalam kondisi yang aman. Dengan mekanisme pengambilan data sebagai berikut:
+
+Flowchart pengambilan datasensor MAX30102
+
+![MAX30102](https://github.com/user-attachments/assets/e6edf8a3-6180-4b97-a5d3-7798063bdd32)
+
+Hasil sensor testing:
+
+Test tangan:
+
+![image](https://github.com/user-attachments/assets/a90fc63f-1751-4e69-ba81-464ffe95bdcf)
+
+Output testing:
+
+Jika berhasil:
+
+![Sensor Valid](https://github.com/user-attachments/assets/e712430c-d82a-4a49-bb8c-c2ae0d07dec6)
+
+Jika Sensor gagal terinisialisasi:
+
+![Sensor Invalid](https://github.com/user-attachments/assets/711b09dd-5df4-44f2-adc5-06b53c0a75ee)
+
+Sensor testing ini ditujukan untuk mengetes fungsi sensor dengan memanfaatkan fungsi utamanya yakni mengukur kadar oksigen dalam darah (SpO2) dan denyut jantung menggunakan sensor MAX30105. Pertama, sistem menginisialisasi komunikasi serial untuk mengirim dan menerima data serta mengatur LED indikator sebagai output. Setelah itu, sensor MAX30105 diinisialisasi; jika berhasil, sistem menampilkan pesan "Attach sensor to finger. Press key to start" untuk meminta pengguna menempatkan jari mereka pada sensor. Namun, jika inisialisasi gagal, pesan kesalahan akan muncul untuk memeriksa kembali sambungan daya atau kabel.
+
+Setelah sensor terpasang dan pengguna menekan tombol untuk memulai, sistem mengonfigurasi parameter sensor seperti kecerahan LED dan kecepatan sampel. Dalam loop utama, sistem membaca sampel data dari sensor, menyimpan data cahaya merah dan inframerah (IR) dalam buffer, dan menampilkan data ini pada monitor serial. Setelah pengumpulan data, sistem menghitung SpO2 dan denyut jantung, kemudian menampilkannya. Loop ini berjalan terus menerus, memperbarui pembacaan SpO2 dan denyut jantung, hingga kondisi penghentian dicapai.
+
+5. **Sensor GY906**:
+MLX90614 adalah sensor inframerah yang dapat mengukur suhu tanpa kontak fisik (non-contact). Ini memungkinkan pengukuran suhu tubuh bayi dari jarak dekat, tanpa perlu menyentuh kulit bayi, yang sangat penting untuk kenyamanan dan keamanan. Di proyek ini, MLX90614 digunakan untuk memantau suhu tubuh bayi secara real-time dan mendeteksi potensi demam atau perubahan suhu yang signifikan. Dengan mekanisme pengambilan data sebagai berikut:
 
 ![DLOWCHART GY](https://github.com/user-attachments/assets/b7ca2806-85aa-4c06-a2f3-4e988c5c50df)
+
+Hasil sensor testing:
+
+Test tangan:
+
+![image](https://github.com/user-attachments/assets/63aa29ad-b7ee-499b-b67e-d243dc401204)
+
+Test Solder (suhu tinggi):
+
+![image](https://github.com/user-attachments/assets/9a97053b-3404-4814-ab52-21849c30fd0d)
+
+Sistem dan cara kerja testing sensor ini menggunakan sensor GY906 dan layar OLED untuk menampilkan suhu secara real-time dalam sebuah aplikasi monitoring, seperti "SAFE BABYWATCH." Cara kerja sistem dimulai dengan inisialisasi pustaka dan variabel untuk layar OLED dan sensor suhu, yang bertugas membaca suhu objek dari lingkungan sekitar. Program mengonfigurasi OLED display pada fungsi `setup`, termasuk pengaturan warna teks dan resolusi tampilan, serta mengaktifkan sensor inframerah agar dapat mengambil data suhu.
+
+Selanjutnya, pada fungsi `loop`, sistem membaca suhu secara berulang dan memperbarui tampilan OLED. Proses ini melibatkan pengambilan data suhu dari sensor inframerah, membersihkan buffer tampilan OLED agar tidak ada residu tampilan sebelumnya, dan menampilkan teks pengaman "SAFE BABYWATCH" serta label suhu yang menunjukkan nilai terbaru. Suhu yang diperoleh dari sensor diubah menjadi string untuk memudahkan penampilannya pada layar, bersama dengan satuan suhu (derajat Celsius). Setelah proses ini selesai, OLED display diperbarui, dan loop berulang, memungkinkan pembacaan suhu terkini untuk ditampilkan terus-menerus pada layar sebagai informasi real-time.
+
+6. **OLED 0.96**:
+   - OLED 0.96 adalah layar kecil berukuran 0.96 inci yang menggunakan teknologi OLED (Organic Light Emitting Diode). Layar ini memiliki tampilan yang jernih dan kontras tinggi sehingga cocok untuk menampilkan informasi penting dalam ruang yang terbatas. Dalam proyek ini, OLED 0.96 digunakan untuk menampilkan data seperti detak jantung, kadar oksigen, dan suhu bayi secara langsung, memudahkan pemantauan oleh pengguna di lokasi yang sama.
+
+Komponen-komponen ini bekerja bersama-sama untuk memantau kondisi kesehatan bayi secara real-time, memberikan peringatan dini jika ada anomali kondisi bayi, dan memungkinkan pemantauan jarak jauh oleh orang tua atau pengasuh melalui internet.
 
 [DATASHEET GY-906]
 
@@ -74,23 +104,12 @@ Flowchart pengambilan datasensor GY-906
 - Sudut Pandang Lebar: Memiliki sudut pandang sekitar 35°, yang memungkinkannya untuk mendeteksi suhu dari area yang lebih luas
 - Tahan terhadap Gangguan Elektromagnetik: Didesain dengan ketahanan yang baik terhadap interferensi elektromagnetik pengukuran lebih stabil dan dapat diandalkan dalam lingkungan industri.
 
-Hasil sensor testing:
-
-Test tangan:
-
-![image](https://github.com/user-attachments/assets/63aa29ad-b7ee-499b-b67e-d243dc401204)
-
-Test Solder (suhu tinggi):
-
-![image](https://github.com/user-attachments/assets/9a97053b-3404-4814-ab52-21849c30fd0d)
 
 [PENJELASAN HASIL SENSOR TESTING]
 
 [PENJELASAN SENSOR GY-906]
 
-Flowchart pengambilan datasensor MAX30102
 
-![MAX30102](https://github.com/user-attachments/assets/e6edf8a3-6180-4b97-a5d3-7798063bdd32)
 
 [DATASHEET MAX30102]
 
@@ -111,21 +130,7 @@ Flowchart pengambilan datasensor MAX30102
 - Penggunaan: Oximeter, deteksi detak jantung, perangkat medis wearable
 - Dilengkapi dengan algoritma yang dapat membantu dalam pemrosesan sinyal detak jantung dan oksigen dalam darah, sehingga **cocok untuk perangkat wearable dan aplikasi kesehatan**.
 
-Hasil sensor testing:
 
-Test tangan:
-
-![image](https://github.com/user-attachments/assets/a90fc63f-1751-4e69-ba81-464ffe95bdcf)
-
-Output testing:
-
-Jika berhasil:
-
-![Sensor Valid](https://github.com/user-attachments/assets/e712430c-d82a-4a49-bb8c-c2ae0d07dec6)
-
-Jika Sensor gagal terinisialisasi:
-
-![Sensor Invalid](https://github.com/user-attachments/assets/711b09dd-5df4-44f2-adc5-06b53c0a75ee)
 
 [PENJELASAN HASIL SENSOR TESTING]
 

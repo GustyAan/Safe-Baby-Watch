@@ -50,16 +50,17 @@ Flowchart pengambilan datasensor GY-906
 ![DLOWCHART GY](https://github.com/user-attachments/assets/b7ca2806-85aa-4c06-a2f3-4e988c5c50df)
 
 [DATASHEET GY-906]
+
 GY-906 merupakan modul sensor inframerah non-kontak berdasarkan sensor MLX90614 dari Melexis, yang dapat mendeteksi suhu tanpa perlu menyentuh objek. Berikut adalah beberapa spesifikasi utama dari GY-906:
 
-Sensor: MLX90614
-Rentang Suhu Objek: -70°C hingga 380°C
-Rentang Suhu Operasional: -40°C hingga 125°C
-Akurasi: ±0.5°C pada suhu objek antara 0 hingga 50°C
-Resolusi: 0.02°C
-Antarmuka Komunikasi: I2C dan PWM
-Tegangan Operasional: 3V hingga 5V
-Sudut Pandang: Sekitar 35°
+- Sensor: MLX90614
+- Rentang Suhu Objek: -70°C hingga 380°C
+- Rentang Suhu Operasional: -40°C hingga 125°C
+- Akurasi: ±0.5°C pada suhu objek antara 0 hingga 50°C
+- Resolusi: 0.02°C
+- Antarmuka Komunikasi: I2C dan PWM
+- Tegangan Operasional: 3V hingga 5V
+- Sudut Pandang: Sekitar 35°
 
 Hasil sensor testing:
 

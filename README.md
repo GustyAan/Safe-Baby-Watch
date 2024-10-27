@@ -31,7 +31,7 @@ ESP12 adalah modul berbasis microcontroller ESP8266 yang memiliki kemampuan Wi-F
 
 3. **Sensor MAX30102**:
    
-MAX30105 adalah sensor optik yang dapat mendeteksi detak jantung dan kadar oksigen dalam darah. Sensor ini bekerja dengan memancarkan cahaya dan mendeteksi refleksi cahaya tersebut dari pembuluh darah di kulit. Pada proyek ini, MAX30105 berguna untuk memantau detak jantung dan saturasi oksigen bayi, sehingga dapat mendeteksi tanda-tanda vital dan memastikan bayi dalam kondisi yang aman. Sensor MAX 30102 memiliki spesifikasi sebagai berikut:
+MAX30102 adalah sensor optik yang dapat mendeteksi detak jantung dan kadar oksigen dalam darah. Sensor ini bekerja dengan memancarkan cahaya dan mendeteksi refleksi cahaya tersebut dari pembuluh darah di kulit. Pada proyek ini, MAX30102 berguna untuk memantau detak jantung dan saturasi oksigen bayi, sehingga dapat mendeteksi tanda-tanda vital dan memastikan bayi dalam kondisi yang aman. Sensor MAX 30102 memiliki spesifikasi sebagai berikut:
 - Sensor: LED merah dan inframerah untuk mendeteksi detak jantung dan SpO2
 - Tegangan Operasional: 1.8V untuk inti, 3.3V untuk LED
 - Antarmuka Komunikasi: I2C
@@ -66,14 +66,14 @@ Jika Sensor gagal terinisialisasi:
 
 ![Sensor Invalid](https://github.com/user-attachments/assets/711b09dd-5df4-44f2-adc5-06b53c0a75ee)
 
-Sensor testing ini ditujukan untuk mengetes fungsi sensor dengan memanfaatkan fungsi utamanya yakni mengukur kadar oksigen dalam darah (SpO2) dan denyut jantung menggunakan sensor MAX30105. Pertama, sistem menginisialisasi komunikasi serial untuk mengirim dan menerima data serta mengatur LED indikator sebagai output. Setelah itu, sensor MAX30105 diinisialisasi; jika berhasil, sistem menampilkan pesan "Attach sensor to finger. Press key to start" untuk meminta pengguna menempatkan jari mereka pada sensor. Namun, jika inisialisasi gagal, pesan kesalahan akan muncul untuk memeriksa kembali sambungan daya atau kabel.
+Sensor testing ini ditujukan untuk mengetes fungsi sensor dengan memanfaatkan fungsi utamanya yakni mengukur kadar oksigen dalam darah (SpO2) dan denyut jantung menggunakan sensor MAX30102. Pertama, sistem menginisialisasi komunikasi serial untuk mengirim dan menerima data serta mengatur LED indikator sebagai output. Setelah itu, sensor MAX30102 diinisialisasi; jika berhasil, sistem menampilkan pesan "Attach sensor to finger. Press key to start" untuk meminta pengguna menempatkan jari mereka pada sensor. Namun, jika inisialisasi gagal, pesan kesalahan akan muncul untuk memeriksa kembali sambungan daya atau kabel.
 
 Setelah sensor terpasang dan pengguna menekan tombol untuk memulai, sistem mengonfigurasi parameter sensor seperti kecerahan LED dan kecepatan sampel. Dalam loop utama, sistem membaca sampel data dari sensor, menyimpan data cahaya merah dan inframerah (IR) dalam buffer, dan menampilkan data ini pada monitor serial. Setelah pengumpulan data, sistem menghitung SpO2 dan denyut jantung, kemudian menampilkannya. Loop ini berjalan terus menerus, memperbarui pembacaan SpO2 dan denyut jantung, hingga kondisi penghentian dicapai.
 
 5. **Sensor GY906**:
-MLX90614 adalah sensor inframerah yang dapat mengukur suhu tanpa kontak fisik (non-contact) denganspesifikasi sebagai berikut:
+GY906 adalah sensor inframerah yang dapat mengukur suhu tanpa kontak fisik (non-contact) denganspesifikasi sebagai berikut:
 
-- Sensor: MLX90614
+- Sensor: GY906
 - Rentang Suhu Objek: -70°C hingga 380°C
 - Rentang Suhu Operasional: -40°C hingga 125°C
 - Akurasi: ±0.5°C pada suhu objek antara 0 hingga 50°C
@@ -82,7 +82,7 @@ MLX90614 adalah sensor inframerah yang dapat mengukur suhu tanpa kontak fisik (n
 - Tegangan Operasional: 3V hingga 5V
 - Sudut Pandang: Sekitar 35°
 
-Kelebihan non-contact ni memungkinkan pengukuran suhu tubuh bayi dari jarak dekat, tanpa perlu menyentuh kulit bayi, yang sangat penting untuk kenyamanan dan keamanan. Di proyek ini, MLX90614 digunakan untuk memantau suhu tubuh bayi secara real-time dan mendeteksi potensi demam atau perubahan suhu yang signifikan. Penggunaan sensor GY906 dikarenakan sensor memiliki beberapa kelebihan sebagai berikut:
+Kelebihan non-contact ni memungkinkan pengukuran suhu tubuh bayi dari jarak dekat, tanpa perlu menyentuh kulit bayi, yang sangat penting untuk kenyamanan dan keamanan. Di proyek ini, GY906 digunakan untuk memantau suhu tubuh bayi secara real-time dan mendeteksi potensi demam atau perubahan suhu yang signifikan. Penggunaan sensor GY906 dikarenakan sensor memiliki beberapa kelebihan sebagai berikut:
 
 - Pengukuran Suhu Non-Kontak: GY-906 menggunakan teknologi inframerah untuk mengukur suhu objek tanpa perlu menyentuhnya
 - Akurasi Tinggi: Sensor ini memiliki akurasi sekitar ±0,5°C pada rentang suhu 0°C hingga 50°C

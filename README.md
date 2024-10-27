@@ -23,6 +23,22 @@ DIAGRAM SISTEM
 
 [TAMBAHIN PENJELASAN KOMPONEN DARI MASING2 KOMPONEN DALAM GAMBAR KERJA SISTEM]
 
+Berikut penjelasan dari fungsi masing-masing komponen yang digunakan dalam proyek **Safe Baby Watch** (alat pemantauan kesehatan bayi berbasis IoT):
+
+1. **ESP12**:
+   - ESP12 adalah modul berbasis microcontroller ESP8266 yang memiliki kemampuan Wi-Fi, sehingga dapat mengirim dan menerima data secara nirkabel melalui internet. Pada proyek Safe Baby Watch, ESP12 digunakan sebagai otak utama yang mengumpulkan data dari berbagai sensor, memprosesnya, dan mengirimkan data tersebut ke aplikasi atau platform IoT. Hal ini memungkinkan pemantauan jarak jauh terhadap kondisi kesehatan bayi.
+
+2. **Sensor MAX30105**:
+   - MAX30105 adalah sensor optik yang dapat mendeteksi detak jantung dan kadar oksigen dalam darah. Sensor ini bekerja dengan memancarkan cahaya dan mendeteksi refleksi cahaya tersebut dari pembuluh darah di kulit. Pada proyek ini, MAX30105 berguna untuk memantau detak jantung dan saturasi oksigen bayi, sehingga dapat mendeteksi tanda-tanda vital dan memastikan bayi dalam kondisi yang aman.
+
+3. **Sensor MLX90614**:
+   - MLX90614 adalah sensor inframerah yang dapat mengukur suhu tanpa kontak fisik (non-contact). Ini memungkinkan pengukuran suhu tubuh bayi dari jarak dekat, tanpa perlu menyentuh kulit bayi, yang sangat penting untuk kenyamanan dan keamanan. Di proyek ini, MLX90614 digunakan untuk memantau suhu tubuh bayi secara real-time dan mendeteksi potensi demam atau perubahan suhu yang signifikan.
+
+4. **OLED 0.96**:
+   - OLED 0.96 adalah layar kecil berukuran 0.96 inci yang menggunakan teknologi OLED (Organic Light Emitting Diode). Layar ini memiliki tampilan yang jernih dan kontras tinggi sehingga cocok untuk menampilkan informasi penting dalam ruang yang terbatas. Dalam proyek ini, OLED 0.96 digunakan untuk menampilkan data seperti detak jantung, kadar oksigen, dan suhu bayi secara langsung, memudahkan pemantauan oleh pengguna di lokasi yang sama.
+
+Komponen-komponen ini bekerja bersama-sama untuk memantau kondisi kesehatan bayi secara real-time, memberikan peringatan dini jika ada anomali, dan memungkinkan pemantauan jarak jauh oleh orang tua atau pengasuh melalui internet.
+
 [PENJELASAN ESP 12: Pin I/O dll]
 
 ![image](https://github.com/user-attachments/assets/01c10f11-8491-4afe-9a1a-e402481b7fd1)

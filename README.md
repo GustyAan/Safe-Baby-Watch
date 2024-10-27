@@ -21,7 +21,7 @@ DIAGRAM SISTEM
 
 ![image](https://github.com/user-attachments/assets/e3545708-e1d0-4b24-80e6-9357fcf48d4f)
 
-[TAMBAHIN PENJELASAN KOMPONEN DARI MASING2 KOMPONEN DALAM GAMBAR KERJA SISTEM]
+[PENJELASAN KOMPONEN DARI MASING2 KOMPONEN DALAM GAMBAR KERJA SISTEM]
 
 Berikut penjelasan dari fungsi masing-masing komponen yang digunakan dalam proyek **Safe Baby Watch** (alat pemantauan kesehatan bayi berbasis IoT):
 

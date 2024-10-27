@@ -126,8 +126,7 @@ Saturasi Oksigen: Menampilkan persentase saturasi oksigen (SpO2).
 masing-masing elemen disertai notifikasi jika angka atau data yang diterima berada di luar rentang normal atau aman.
 
 2. Status Kondisi Tubuh
-Bagian ini menampilkan status kesehatan pengguna, apakah dalam kondisi sehat atau ada anomali sesuai data yang diperoleh dari sensor.
-Status ini akan diperbarui berdasarkan ambang batas setiap parameter. Jika semua parameter berada dalam rentang normal, maka status tubuh akan tertulis "Sehat" dengan ikon hijau; jika ada parameter yang di luar batas normal, status akan memperingatkan "Periksa Kondisi" dengan ikon kuning atau merah.
+Bagian ini menampilkan status kesehatan pengguna, apakah dalam kondisi sehat atau ada anomali sesuai data yang diperoleh dari sensor. Status ini akan diperbarui berdasarkan ambang batas setiap parameter. Jika semua parameter berada dalam rentang normal, maka status tubuh akan tertulis "Sehat" dengan ikon hijau; jika ada parameter yang di luar batas normal, status akan memperingatkan "Periksa Kondisi" dengan ikon kuning atau merah.
 
 
 

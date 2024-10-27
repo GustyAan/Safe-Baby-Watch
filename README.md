@@ -116,6 +116,18 @@ OLED 0.96 adalah layar kecil berukuran 0.96 inci yang menggunakan teknologi OLED
 
 Komponen-komponen ini bekerja bersama-sama untuk memantau kondisi kesehatan bayi secara real-time, memberikan peringatan dini jika ada anomali kondisi bayi, dan memungkinkan pemantauan jarak jauh oleh orang tua atau pengasuh melalui internet.
 
+**Tampilan Web Monitoring**
+Tampilan web ini dirancang untuk menampilkan data sensor secara real-time, yang mencakup data heart rate, suhu tubuh, dan saturasi oksigen. Setiap sensor memiliki tampilan berupa angka yang terus diperbarui sesuai pembacaan terbaru.
+
+1. Dashboard Utama
+Heart Rate: Menampilkan detak jantung (BPM).
+Suhu Tubuh: Menampilkan suhu tubuh dalam °C atau °F.
+Saturasi Oksigen: Menampilkan persentase saturasi oksigen (SpO2).
+masing-masing elemen disertai notifikasi jika angka atau data yang diterima berada di luar rentang normal atau aman.
+
+2. Status Kondisi Tubuh
+Bagian ini menampilkan status kesehatan pengguna, apakah dalam kondisi sehat atau ada anomali sesuai data yang diperoleh dari sensor.
+Status ini akan diperbarui berdasarkan ambang batas setiap parameter. Jika semua parameter berada dalam rentang normal, maka status tubuh akan tertulis "Sehat" dengan ikon hijau; jika ada parameter yang di luar batas normal, status akan memperingatkan "Periksa Kondisi" dengan ikon kuning atau merah.
 
 
 

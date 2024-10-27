@@ -51,7 +51,7 @@ Flowchart pengambilan datasensor GY-906
 
 [DATASHEET GY-906]
 
-GY-906 merupakan modul sensor inframerah non-kontak berdasarkan sensor MLX90614 dari Melexis, yang dapat mendeteksi suhu tanpa perlu menyentuh objek. Berikut adalah beberapa spesifikasi utama dari GY-906:
+**GY-906** merupakan modul sensor inframerah non-kontak berdasarkan sensor MLX90614 dari Melexis, yang dapat mendeteksi suhu tanpa perlu menyentuh objek. Berikut adalah beberapa spesifikasi utama dari GY-906:
 
 - Sensor: MLX90614
 - Rentang Suhu Objek: -70°C hingga 380°C
@@ -61,6 +61,16 @@ GY-906 merupakan modul sensor inframerah non-kontak berdasarkan sensor MLX90614 
 - Antarmuka Komunikasi: I2C dan PWM
 - Tegangan Operasional: 3V hingga 5V
 - Sudut Pandang: Sekitar 35°
+- 
+**KELEBIHAN**
+- Pengukuran Suhu Non-Kontak: GY-906 menggunakan teknologi inframerah untuk mengukur suhu objek tanpa perlu menyentuhnya
+- Akurasi Tinggi: Sensor ini memiliki akurasi sekitar ±0,5°C pada rentang suhu 0°C hingga 50°C
+- Resolusi Tinggi: Dengan resolusi 0,02°C, sensor ini dapat mendeteksi perubahan suhu yang sangat kecil.
+- Rentang Pengukuran Luas: GY-906 memiliki rentang pengukuran yang luas, dari -70°C hingga 380°C
+- Konsumsi Daya Rendah: Sensor ini memiliki konsumsi daya yang rendah
+- Antarmuka I2C dan PWM: Memiliki dua jenis antarmuka (I2C dan PWM)
+- Sudut Pandang Lebar: Memiliki sudut pandang sekitar 35°, yang memungkinkannya untuk mendeteksi suhu dari area yang lebih luas
+- Tahan terhadap Gangguan Elektromagnetik: Didesain dengan ketahanan yang baik terhadap interferensi elektromagnetik pengukuran lebih stabil dan dapat diandalkan dalam lingkungan industri.
 
 Hasil sensor testing:
 
@@ -80,7 +90,24 @@ Flowchart pengambilan datasensor MAX30102
 
 ![MAX30102](https://github.com/user-attachments/assets/e6edf8a3-6180-4b97-a5d3-7798063bdd32)
 
-[TAMBAHIN DATASHEET MAX30102]
+[DATASHEET MAX30102]
+
+
+**MAX30102**: sensor optik yang dirancang untuk mengukur detak jantung dan kadar oksigen dalam darah (SpO2). Sensor ini mengintegrasikan LED merah dan inframerah, fotodetektor, optik khusus, dan elektronik pemrosesan sinyal. Berikut adalah beberapa spesifikasi utama dari MAX30102:
+
+- Sensor: LED merah dan inframerah untuk mendeteksi detak jantung dan SpO2
+- Tegangan Operasional: 1.8V untuk inti, 3.3V untuk LED
+- Antarmuka Komunikasi: I2C
+- Arus Rata-rata: 600µA (tergantung pengaturan)
+- Mode Pengukuran: Detak jantung dan oksigen darah (SpO2)
+- Rentang Panjang Gelombang LED:
+- LED Merah: 660 nm
+- LED Inframerah: 880 nm
+
+  **KELEBIHAN**
+- Penggunaan Daya: Rendah, cocok untuk perangkat wearable
+- Penggunaan: Oximeter, deteksi detak jantung, perangkat medis wearable
+- Dilengkapi dengan algoritma yang dapat membantu dalam pemrosesan sinyal detak jantung dan oksigen dalam darah, sehingga **cocok untuk perangkat wearable dan aplikasi kesehatan**.
 
 Hasil sensor testing:
 

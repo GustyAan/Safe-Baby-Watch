@@ -1,7 +1,9 @@
 # Safe Baby Watch 
 Merupakan proyek SmartWatch Pemantau Kesehatan Bayi ini adalah memberikan solusi kesehatan yang inovatif untuk memantau kondisi kesehatan bayi secara real-time. Proyek ini bertujuan untuk membantu orang tua dan pengasuh dalam mendeteksi dini masalah kesehatan bayi, sehingga mereka dapat mengambil tindakan pencegahan atau perawatan yang tepat dengan cepat. Dengan menggunakan teknologi IoT, alat ini memungkinkan pemantauan kesehatan bayi yang lebih praktis, efisien, dan akurat, sehingga memberikan ketenangan bagi orang tua dalam menjaga kesejahteraan bayi mereka.
 
-[TAMBAHIN CARA KERJA SISTEM YANG DITAMBAHIN KETERANGAN AGAR NYAMBUNG DENGAN PETA KONEKSI DAN DIAGRAM SISTEM]
+[CARA KERJA SISTEM DENGAN PETA KONEKSI DAN DIAGRAM SISTEM]
+
+Sensor MAX30105 mendeteksi detak jantung dan kadar oksigen dalam darah bayi dan Sensor MLX90614 memantau suhu tubuh bayi tanpa kontak langsung **-->** Pemrosesan dan Tampilan Data dari sensor diproses oleh modul ESP12 **-->** Layar OLED menampilkan informasi suhu dan detak jantung secara langsung **-->** Jika terdeteksi kondisi abnormal, sistem mengirimkan notifikasi **-->** Data dikirimkan melalui WiFi ke aplikasi mobile untuk pemantauan jarak jauh dan real-time **-->** Diagram menunjukkan koneksi dari sensor ke ESP12 dan aliran data menuju aplikasi.
 
 Peta koneksi 
 

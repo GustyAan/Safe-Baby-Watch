@@ -116,7 +116,7 @@ OLED 0.96 adalah layar kecil berukuran 0.96 inci yang menggunakan teknologi OLED
 
 Komponen-komponen ini bekerja bersama-sama untuk memantau kondisi kesehatan bayi secara real-time, memberikan peringatan dini jika ada anomali kondisi bayi, dan memungkinkan pemantauan jarak jauh oleh orang tua atau pengasuh melalui internet.
 
-teset
+
 
 
 

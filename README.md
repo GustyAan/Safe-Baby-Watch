@@ -1,7 +1,19 @@
-#PROJECCT PBL: Safe Watch
-#PROGRAM STUDI SARJANA TERAPAN TEKNIK ELEKTRONIKA, DEPARTEMEN TEKNIK ELEKTRO, POLITEKNIK ELEKTRONIKA NEGERI SURABAYA, 2024
-
 # Safe Watch 
+
+**Anggota Kelompok:**
+
+1. isi
+2. Gusty Anugrah
+
+Jobdesk: Team Hardware, tugas tim hardware meliputi perancangan dan pengujian tampilan aplikasi user, pengujian awal prototipe, perakitan komponen dalam case, dan pengujian akhir untuk memastikan semua fungsi perangkat keras berjalan sesuai spesifikasi.
+
+3. isi
+4. isi
+5. isi
+6. isi
+
+**PROJECT PBL; PROGRAM STUDI SARJANA TERAPAN TEKNIK ELEKTRONIKA, DEPARTEMEN TEKNIK ELEKTRO, POLITEKNIK ELEKTRONIKA NEGERI SURABAYA, 2024**
+
 Merupakan proyek SmartWatch Pemantau Kesehatan Bayi ini adalah memberikan solusi kesehatan yang inovatif untuk memantau kondisi kesehatan bayi secara real-time. Proyek ini bertujuan untuk membantu orang tua dan pengasuh dalam mendeteksi dini masalah kesehatan bayi, sehingga mereka dapat mengambil tindakan pencegahan atau perawatan yang tepat dengan cepat. Dengan menggunakan teknologi IoT, alat ini memungkinkan pemantauan kesehatan bayi yang lebih praktis, efisien, dan akurat, sehingga memberikan ketenangan bagi orang tua dalam menjaga kesejahteraan bayi mereka.
 
 **Desain dan Perencanaan**

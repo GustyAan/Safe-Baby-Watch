@@ -1,5 +1,5 @@
-**#PROJECCT PBL: Safe Watch**
-**#PROGRAM STUDI SARJANA TERAPAN TEKNIK ELEKTRONIKA, DEPARTEMEN TEKNIK ELEKTRO, POLITEKNIK ELEKTRONIKA NEGERI SURABAYA, 2024**
+#PROJECCT PBL: Safe Watch
+#PROGRAM STUDI SARJANA TERAPAN TEKNIK ELEKTRONIKA, DEPARTEMEN TEKNIK ELEKTRO, POLITEKNIK ELEKTRONIKA NEGERI SURABAYA, 2024
 
 # Safe Watch 
 Merupakan proyek SmartWatch Pemantau Kesehatan Bayi ini adalah memberikan solusi kesehatan yang inovatif untuk memantau kondisi kesehatan bayi secara real-time. Proyek ini bertujuan untuk membantu orang tua dan pengasuh dalam mendeteksi dini masalah kesehatan bayi, sehingga mereka dapat mengambil tindakan pencegahan atau perawatan yang tepat dengan cepat. Dengan menggunakan teknologi IoT, alat ini memungkinkan pemantauan kesehatan bayi yang lebih praktis, efisien, dan akurat, sehingga memberikan ketenangan bagi orang tua dalam menjaga kesejahteraan bayi mereka.

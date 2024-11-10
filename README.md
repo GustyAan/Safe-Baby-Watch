@@ -29,17 +29,16 @@ Sistem Safe Watch bekerja dengan sensor MAX30102 yang mendeteksi detak jantung (
 
 USE CASE DIAGRAM:
 
-![image](https://github.com/user-attachments/assets/122f8146-2a26-44c5-826f-a586404d9e0f)
-![image](https://github.com/user-attachments/assets/94b70f10-c363-45ee-b04f-aaac74db31cc)
 ![image](https://github.com/user-attachments/assets/be8592f2-f5d5-41c5-828e-7899528ed779)
+![image](https://github.com/user-attachments/assets/122f8146-2a26-44c5-826f-a586404d9e0f) ![image](https://github.com/user-attachments/assets/94b70f10-c363-45ee-b04f-aaac74db31cc)
 
-Pengguna dapat menerima data sensor yang dipublikasikan oleh ESP32 melalui broker MQTT. Dalam skenario ini, ESP32 bertanggung jawab untuk menghubungkan perangkat ke jaringan WiFi, mengumpulkan data dari berbagai sensor seperti suhu tubuh, kadar oksigen (SpO2), dan detak jantung, serta mengirimkan data tersebut ke broker MQTT. ESP32 juga melakukan sinkronisasi waktu dengan server NTP untuk memastikan waktu yang akurat digunakan dalam pengolahan dan penyajian data.
+Pengguna dapat menerima data sensor yang dipublikasikan oleh ESP32 melalui broker MQTT. Dalam skenario ini, ESP32 bertanggung jawab untuk menghubungkan perangkat ke jaringan WiFi, mengumpulkan data dari berbagai sensor seperti suhu tubuh dan detak jantung, serta mengirimkan data tersebut ke broker MQTT. ESP32 juga melakukan sinkronisasi waktu dengan server NTP untuk memastikan waktu yang akurat digunakan dalam pengolahan dan penyajian data.
 
 Broker MQTT berfungsi sebagai perantara dalam pengelolaan pesan yang dikirim oleh ESP32. Setiap perangkat yang berlangganan ke topik tertentu dapat menerima data yang sesuai dengan topik tersebut, seperti data sensor dari ESP32. Server NTP menyediakan waktu yang tepat yang digunakan oleh ESP32 untuk menyinkronkan waktu dalam sistem. Hal ini memastikan bahwa data yang dikirim dan diterima oleh ESP32 serta perangkat lainnya tetap terorganisir dengan baik dan sesuai dengan waktu yang akurat.
 
 CLASS DIAGRAM
 
-Class diagram dalam sistem ini menggambarkan struktur perangkat dan fungsionalitas masing-masing komponen. Ada beberapa kelas utama, yaitu kelas ESP32 yang berfungsi untuk menghubungkan perangkat ke WiFi, mengumpulkan data dari sensor, dan mengirimkan data tersebut ke broker MQTT. Kelas Sensor menjadi kelas dasar, dengan kelas turunannya seperti TemperatureSensor dan SpO2Sensor, yang masing-masing memiliki atribut dan metode untuk membaca data sensor suhu tubuh dan kadar oksigen dalam darah. Kelas MQTTClient mengelola koneksi dan komunikasi dengan broker MQTT, sementara kelas NTPClient mengelola sinkronisasi waktu dengan server NTP. Setiap kelas ini berinteraksi satu sama lain untuk menjalankan sistem secara keseluruhan. Berikut adalah diagram untuk class diagram:
+Class diagram dalam sistem ini menggambarkan struktur perangkat dan fungsionalitas masing-masing komponen. Ada beberapa kelas utama, yaitu kelas ESP32 yang berfungsi untuk menghubungkan perangkat ke WiFi, mengumpulkan data dari sensor, dan mengirimkan data tersebut ke broker MQTT. Kelas Sensor menjadi kelas dasar, dengan kelas turunannya seperti TemperatureSensor dan HeartRateSensor, yang masing-masing memiliki atribut dan metode untuk membaca data sensor suhu tubuh dan kadar oksigen dalam darah. Kelas MQTTClient mengelola koneksi dan komunikasi dengan broker MQTT, sementara kelas NTPClient mengelola sinkronisasi waktu dengan server NTP. Setiap kelas ini berinteraksi satu sama lain untuk menjalankan sistem secara keseluruhan. Berikut adalah diagram untuk class diagram:
 
 ![image](https://github.com/user-attachments/assets/956ddd09-2f74-4653-931c-c7cc29f03ff6)
 
@@ -47,7 +46,7 @@ SEQUNCE DIAGRAM
 
 Sequence diagram menggambarkan urutan interaksi antara objek dalam sistem. Pada diagram ini, urutan langkah-langkah yang dilakukan adalah sebagai berikut: 
 
-Pengguna mengirimkan perintah kepada ESP32, yang kemudian menghubungkan ke WiFi, mengumpulkan data sensor dari TemperatureSensor dan SpO2Sensor, kemudian mengirimkan data tersebut ke Broker MQTT. Broker MQTT kemudian mempublikasikan data ke topik yang sesuai, yang akan diterima oleh Pengguna yang berlangganan topik tersebut. Selain itu, ESP32 melakukan sinkronisasi waktu dengan Server NTP. Berikut adalah diagram untuk sequence diagram:
+Pengguna mengirimkan perintah kepada ESP32, yang kemudian menghubungkan ke WiFi, mengumpulkan data sensor dari TemperatureSensor dan HeartRateSensor, kemudian mengirimkan data tersebut ke Broker MQTT. Broker MQTT kemudian mempublikasikan data ke topik yang sesuai, yang akan diterima oleh Pengguna yang berlangganan topik tersebut. Selain itu, ESP32 melakukan sinkronisasi waktu dengan Server NTP. Berikut adalah diagram untuk sequence diagram:
 
 ![image](https://github.com/user-attachments/assets/10a24828-5c7d-4898-994c-85fa0c0d9a41)
 
@@ -130,7 +129,7 @@ MAX30102 adalah sensor optik yang dapat mendeteksi detak jantung. Sensor ini bek
   Sensor MAX30102 ini sipilih karena memiliki kelebihan sebagai berikut:
 - Penggunaan Daya: Rendah, cocok untuk perangkat wearable
 - Penggunaan: Oximeter, deteksi detak jantung, perangkat medis wearable
-- Dilengkapi dengan algoritma yang dapat membantu dalam pemrosesan sinyal detak jantung, sehingga **cocok untuk perangkat wearable dan aplikasi kesehatan**.
+- Dilengkapi dengan algoritma yang dapat membantu dalam pemrosesan sinyal detak jantung, sehingga cocok untuk perangkat wearable dan aplikasi kesehatan.
 
 Dengan adanya kelebihan dan spesifikasi diatas, pengambilan data dalam sensor testing dapat dilakukan dengan mekanisme pengambilan data sebagai berikut:
 
@@ -200,11 +199,56 @@ Selanjutnya, pada fungsi task utama, sistem membaca suhu secara berulang dan mem
 4. **OLED 0.96**:
 OLED 0.96 adalah layar kecil berukuran 0.96 inci yang menggunakan teknologi OLED (Organic Light Emitting Diode). Layar ini memiliki tampilan yang jernih dan kontras tinggi sehingga cocok untuk menampilkan informasi penting dalam ruang yang terbatas. Dalam proyek ini, OLED 0.96 digunakan untuk menampilkan data seperti detak jantung, suhu lingkungan, dan suhu bayi secara langsung, memudahkan pemantauan oleh pengguna di lokasi yang sama.
 
-POWERMANAGEMENT
+**D. IMPLEMENTASI SOFTWARE**
 
-**Pengujian Alat dan Hasil**
-Tampilan aplikasi ini dirancang untuk menampilkan data sensor secara real-time, yang mencakup data heart rate, suhu tubuh, dan suhu udara sekitar. Setiap sensor memiliki tampilan berupa angka yang terus diperbarui sesuai pembacaan terbaru.
+   1. Komunikasi dan Data
 
+   a. Implementasi MQTT dalam program ESP32 menggunakan pustaka `PubSubClient` untuk menghubungkan ESP32 ke broker MQTT dan mengirimkan data sensor seperti suhu, dan detak jantung ke topik-topik yang telah ditentukan. Program ini memanfaatkan WiFi untuk mengakses internet dan menggunakan MQTT untuk berkomunikasi dengan broker secara teratur, mengirimkan pembaruan data sensor setiap beberapa detik. Dengan demikian, data sensor dapat diakses secara real-time oleh penerima yang berlangganan topik tertentu.
 
+   b. Topik MQTT Terstruktur memungkinkan sistem untuk mengelola banyak node dengan cara mengorganisir topik menjadi kategori atau subkategori, seperti `esp32/device1/ambientTemp` atau. Struktur ini memungkinkan skalabilitas yang lebih besar, memungkinkan lebih dari 100 node dengan mengelompokkan data berdasarkan perangkat atau lokasi. Hal ini membuat manajemen data sensor menjadi lebih efisien dan memudahkan pemantauan berbagai perangkat dalam satu sistem yang terintegrasi.
 
+   c. Sistem Batch Data dalam implementasi ini mengumpulkan data sensor dalam satu periode waktu tertentu, seperti setiap 5 detik, lalu mengirimkan data tersebut dalam satu batch ke broker MQTT. Metode ini mengurangi frekuensi pengiriman data dan meningkatkan efisiensi jaringan. Dengan mengirimkan beberapa nilai sensor sekaligus, sistem dapat mengurangi latensi dan memproses data dalam kelompok yang lebih besar, cocok untuk aplikasi yang membutuhkan pengumpulan data dalam jangka waktu tertentu.
 
+   d. Error Handling diterapkan untuk memastikan kestabilan sistem dengan memeriksa koneksi WiFi dan MQTT secara berkala. Jika koneksi gagal, sistem akan mencoba kembali secara otomatis setelah jeda tertentu, sehingga memastikan bahwa komunikasi tetap terjaga tanpa interupsi. Jika terjadi masalah dalam koneksi atau pengiriman data, error handling akan memberi feedback kepada pengguna dan melakukan percobaan ulang sampai koneksi berhasil.
+
+   e. Data Encryption dapat diimplementasikan untuk melindungi data yang dikirimkan melalui MQTT dengan menggunakan SSL/TLS. Hal ini dilakukan pada project dengan mengonfigurasi broker untuk menggunakan port SSL (seperti port 8883) dan mengaktifkan enkripsi dalam pengaturan koneksi MQTT. Enkripsi ini memastikan bahwa data yang dikirim antara ESP32 dan broker tetap aman dari potensi ancaman atau penyadapan, memberikan lapisan perlindungan tambahan pada sistem komunikasi.
+
+   2. Dashboard dan Monitoring
+
+   a. Real-time monitoring dalam program ESP32 ini merujuk pada kemampuan sistem untuk secara terus-menerus memantau dan menampilkan data sensor tanpa penundaan yang signifikan. Program ini mengintegrasikan sensor-sensor seperti suhu (dari MLX90614), detak jantung (dari MAX30105), serta waktu yang diperoleh dari NTP server untuk memastikan data yang ditampilkan pada layar OLED selalu diperbarui setiap detik. Program menggunakan fungsi `millis()` untuk memastikan pembaruan data sensor dan tampilan pada layar terjadi secara periodik tanpa memblokir eksekusi program lainnya. Data sensor yang diperoleh secara real-time juga diteruskan ke broker MQTT untuk dikirimkan ke sistem penerima atau dashboard yang mengamati kondisi sensor secara langsung, memberikan informasi terkini tentang suhu tubuh, kadar oksigen dalam darah, dan detak jantung pada setiap pembaruan yang terjadi. Ini memungkinkan pemantauan kesehatan atau kondisi lingkungan secara langsung dan dapat diakses secara cepat tanpa menunggu pembaruan data yang lambat.
+
+   b. User Interface Responsif dalam program di atas mengacu pada tampilan antarmuka pengguna (UI) yang dapat memperbarui dan menampilkan informasi secara dinamis berdasarkan data sensor yang diterima dari ESP32. UI ini menggunakan layar OLED (SSD1306) untuk menampilkan data waktu, suhu, detak jantung dengan pembaruan yang teratur dan responsif. Program memanfaatkan fungsi `millis()` untuk memperbarui tampilan secara non-blok, memastikan bahwa layar tetap terperbarui tanpa mengganggu proses lainnya seperti pengambilan data sensor atau komunikasi MQTT.
+
+Tampilan pada layar OLED ini dirancang agar informasinya dapat berubah sesuai dengan waktu dan data sensor yang terbaru. Sebagai contoh, waktu dan tanggal diperbarui setiap detik, sementara nilai sensor, seperti suhu dan HeartRate, diambil secara periodik dan ditampilkan secara real-time. Jika ada perubahan data sensor, tampilan akan diperbarui untuk menampilkan nilai terbaru dengan jelas.
+
+UI yang responsif juga mencakup penanganan pembaruan tampilan dengan cara yang efisien. Misalnya, dengan menggunakan fungsi `display.clearDisplay()` dan `display.display()`, tampilan layar akan dibersihkan dan diperbarui dengan data terbaru tanpa menunggu proses lain selesai, yang memastikan bahwa data yang tampil selalu up-to-date dan menciptakan pengalaman pengguna yang lebih baik.
+
+   c. Data Visualization dengan Broker Gratis dan Aplikasi MQTT dalam konteks program di atas melibatkan penggunaan broker MQTT gratis, seperti `broker.hivemq.com` yang digunakan dalam project ini, yang menerima data dari ESP32 dan memungkinkan visualisasi real-time data sensor di aplikasi yang mendukung MQTT, seperti `MQTT Dash`, `ThingSpeak`, atau platform serupa.
+
+Program ESP32 mengirimkan data sensor, seperti suhu ambient dan objek, detak jantung, ke topik-topik MQTT yang terstruktur. Broker MQTT bertugas untuk menerima data tersebut dan mendistribusikannya ke semua perangkat yang berlangganan topik-topik yang relevan. Misalnya, aplikasi visualisasi dapat berlangganan topik seperti `esp32/ambientTemp`, dan `esp32/heartRate` untuk menerima pembaruan sensor secara langsung.
+
+Dengan menggunakan aplikasi MQTT, pengguna dapat mengonfigurasi dashboard untuk menampilkan data yang diterima dari ESP32 dalam bentuk grafik atau angka yang mudah dipahami. Aplikasi ini memungkinkan pengguna untuk memantau data sensor secara real-time dan menyesuaikan tampilan untuk menunjukkan data yang relevan seperti suhu, detak jantung. Dalam hal ini, broker gratis menyediakan infrastruktur komunikasi yang mendukung pertukaran data antara perangkat dan aplikasi tanpa memerlukan server pribadi, menjadikannya solusi yang praktis untuk aplikasi IoT dengan visualisasi data berbasis cloud.
+
+   Tampilan apabila alat tidak terpasang pada bagian tubuh (tangan) user:
+
+![image](https://github.com/user-attachments/assets/fcf25cd9-7eeb-4e40-8c3e-059c6e5afd8a)
+
+   Tampilan apabila alat terpasang pada bagian tubuh (tangan) user:
+   
+![image](https://github.com/user-attachments/assets/80fc2387-7e42-4a2d-82c5-4cea1e9c9bb7)
+
+**D. IMPLEMENTASI SOFTWARE**
+
+   a. Manajemen Resource Efisien, Project ini mengimplementasikan beberapa teknik untuk efisiensi manajemen sumber daya, seperti penggunaan task scheduling di ESP32 dengan FreeRTOS untuk menjalankan tugas MQTT secara terpisah di Core 0. Penggunaan millis() untuk pembaruan sensor non-blocking juga berkontribusi pada manajemen sumber daya yang efisien, sehingga mengurangi beban pada prosesor dan menghindari delay yang tidak perlu.
+
+   b. Security Best Practices, meskipun beberapa teknik dasar keamanan seperti koneksi WiFi dan penggunaan SSL/TLS untuk MQTT dapat diterapkan, program ini tidak secara eksplisit menerapkan praktik terbaik keamanan, seperti validasi input atau perlindungan dari serangan DDoS. Sebaiknya, sistem diperkuat dengan autentikasi, enkripsi, dan perlindungan terhadap akses yang tidak sah.
+
+   c. Keamanan Jaringan: Program ini terhubung ke WiFi dengan autentikasi standar menggunakan SSID dan password. Ini memberikan tingkat keamanan dasar dengan melindungi perangkat dari akses tanpa izin selama jaringan WiFi dilindungi dengan baik.
+
+   d. Koneksi Broker MQTT: Program ini menggunakan broker MQTT publik yang tidak memiliki enkripsi atau autentikasi tambahan. Data dikirimkan ke broker MQTT dengan port 1883, yang tidak mendukung enkripsi (seperti TLS). Hal ini berarti data yang dikirim dan diterima dapat diakses oleh pihak yang tidak berwenang jika jaringan terpapar.
+
+   e. ID Klien MQTT: Setiap kali perangkat mencoba menyambung ke broker MQTT, ia menggunakan ID unik yang terdiri dari MAC address ESP32. Namun, ID klien ini lebih bersifat identifikasi dan tidak memberikan autentikasi atau keamanan tambahan terhadap akses yang tidak sah.
+
+   f. Pengelolaan Koneksi: Program ini memastikan bahwa ESP32 selalu terhubung dengan broker MQTT. Jika terputus, perangkat akan mencoba untuk tersambung kembali. Meskipun ini merupakan praktik pengelolaan koneksi yang baik, hal ini tidak terkait langsung dengan keamanan data atau autentikasi.
+
+   g. Pengiriman Data: Data yang dikirimkan mencakup suhu, dan detak jantung, yang bisa dianggap sebagai data sensitif. Karena data ini tidak dienkripsi, ada risiko bahwa informasi tersebut bisa diakses oleh pihak yang tidak berwenang.

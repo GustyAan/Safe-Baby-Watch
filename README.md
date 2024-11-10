@@ -1,6 +1,10 @@
 # Safe Watch 
 Merupakan proyek SmartWatch Pemantau Kesehatan Bayi ini adalah memberikan solusi kesehatan yang inovatif untuk memantau kondisi kesehatan bayi secara real-time. Proyek ini bertujuan untuk membantu orang tua dan pengasuh dalam mendeteksi dini masalah kesehatan bayi, sehingga mereka dapat mengambil tindakan pencegahan atau perawatan yang tepat dengan cepat. Dengan menggunakan teknologi IoT, alat ini memungkinkan pemantauan kesehatan bayi yang lebih praktis, efisien, dan akurat, sehingga memberikan ketenangan bagi orang tua dalam menjaga kesejahteraan bayi mereka.
 
+**Desain dan Perencanaan**
+
+**A. Perancangan awal**
+
 Peta koneksi 
 
 ![image](https://github.com/user-attachments/assets/213d96c3-f8b7-4db5-96b1-607c25e38d71)
@@ -50,7 +54,15 @@ Dengan adanya kelebihan dan spesifikasi diatas, pengambilan data dalam sensor te
 
 ![MAX30102](https://github.com/user-attachments/assets/e6edf8a3-6180-4b97-a5d3-7798063bdd32)
 
-Hasil sensor testing:
+**B. Diagram dan arsitektur**
+
+USE CASE DIAGRAM:
+
+![image](https://github.com/user-attachments/assets/122f8146-2a26-44c5-826f-a586404d9e0f)
+![image](https://github.com/user-attachments/assets/94b70f10-c363-45ee-b04f-aaac74db31cc)
+![image](https://github.com/user-attachments/assets/be8592f2-f5d5-41c5-828e-7899528ed779)
+
+Sensor testing:
 
 Test tangan:
 
@@ -124,7 +136,9 @@ Tampilan aplikasi ini dirancang untuk menampilkan data sensor secara real-time, 
    ![image](https://github.com/user-attachments/assets/bb21f061-c784-4b38-ba2e-bc19b985ec75)
    
 Client Publish: esp32/ambientTemp
+
 Suhu Udara: Menampilkan suhu tubuh dalam °C.
+
 Penyesuaian dan Kalibrasi: Jika lingkungan sekitar lebih panas, maka threshold bisa dinaikkan.
 
 2. Setting tampilan Suhu Tubuh
@@ -132,7 +146,9 @@ Penyesuaian dan Kalibrasi: Jika lingkungan sekitar lebih panas, maka threshold b
 ![image](https://github.com/user-attachments/assets/3bc5dff8-5dac-42c9-ab0a-5b5fcbc5e376)
    
 Client Publish: esp32/objectTemp
+
 Suhu Tubuh: Menampilkan suhu tubuh dalam °C.
+
 Penyesuaian dan Kalibrasi: Jika hasil bacaan suhu tidak akurat, lakukan kalibrasi sensor GY90614 agar data lebih akurat.
 
 3. Setting tampilan Suhu Heart Rate
@@ -140,7 +156,9 @@ Penyesuaian dan Kalibrasi: Jika hasil bacaan suhu tidak akurat, lakukan kalibras
 ![image](https://github.com/user-attachments/assets/cce12a0c-53f5-4912-a28c-9b15203b86b4)
    
 Client Publish: esp32/heartRate
+
 Heart Rate: Menampilkan heart rate dalam BPM.
+
 Penyesuaian dan Kalibrasi: Jika hasil bacaan herat rate tidak akurat, lakukan kalibrasi sensor MAX30102 agar data lebih akurat.
 
 4. Tes koneksi WIFI ESP32
@@ -148,7 +166,10 @@ Penyesuaian dan Kalibrasi: Jika hasil bacaan herat rate tidak akurat, lakukan ka
 ![image](https://github.com/user-attachments/assets/f1723e3d-c1bc-4413-9a46-a10e712eec22)
 
 Pengujian koneksi WiFi pada ESP32 dengan metode WiFi Scan bertujuan untuk memastikan bahwa modul ESP32 dapat mendeteksi dan menampilkan daftar jaringan WiFi yang ada di sekitarnya. Proses ini berguna untuk memverifikasi bahwa antena dan modul WiFi pada ESP32 berfungsi dengan baik serta memastikan bahwa perangkat berada dalam jangkauan jaringan yang diinginkan. Metode ini juga membantu untuk mengetahui kekuatan sinyal (RSSI) dari masing-masing jaringan, sehingga kita dapat memilih jaringan yang paling kuat atau stabil untuk koneksi yang optimal.
-adsadad
+
+**Pengujian Alat dan Hasil**
+Tampilan aplikasi ini dirancang untuk menampilkan data sensor secara real-time, yang mencakup data heart rate, suhu tubuh, dan suhu udara sekitar. Setiap sensor memiliki tampilan berupa angka yang terus diperbarui sesuai pembacaan terbaru.
+
 
 
 

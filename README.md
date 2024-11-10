@@ -116,18 +116,32 @@ OLED 0.96 adalah layar kecil berukuran 0.96 inci yang menggunakan teknologi OLED
 
 Komponen-komponen ini bekerja bersama-sama untuk memantau kondisi kesehatan bayi secara real-time, memberikan peringatan dini jika ada anomali kondisi bayi, dan memungkinkan pemantauan jarak jauh oleh orang tua atau pengasuh melalui internet.
 
-**Tampilan Web Monitoring**
-Tampilan web ini dirancang untuk menampilkan data sensor secara real-time, yang mencakup data heart rate, suhu tubuh, dan saturasi oksigen. Setiap sensor memiliki tampilan berupa angka yang terus diperbarui sesuai pembacaan terbaru.
+**Tampilan Aplikasi Monitoring**
+Tampilan aplikasi ini dirancang untuk menampilkan data sensor secara real-time, yang mencakup data heart rate, suhu tubuh, dan suhu udara sekitar. Setiap sensor memiliki tampilan berupa angka yang terus diperbarui sesuai pembacaan terbaru.
 
-1. Dashboard Utama
-Heart Rate: Menampilkan detak jantung (BPM).
-Suhu Tubuh: Menampilkan suhu tubuh dalam °C atau °F.
-Saturasi Oksigen: Menampilkan persentase saturasi oksigen (SpO2).
-masing-masing elemen disertai notifikasi jika angka atau data yang diterima berada di luar rentang normal atau aman.
+1. Setting Tampilan Suhu Udara
 
-2. Status Kondisi Tubuh
-Bagian ini menampilkan status kesehatan pengguna, apakah dalam kondisi sehat atau ada anomali sesuai data yang diperoleh dari sensor. Status ini akan diperbarui berdasarkan ambang batas setiap parameter. Jika semua parameter berada dalam rentang normal, maka status tubuh akan tertulis "Sehat" dengan ikon hijau; jika ada parameter yang di luar batas normal, status akan memperingatkan "Periksa Kondisi" dengan ikon kuning atau merah.
+   ![image](https://github.com/user-attachments/assets/bb21f061-c784-4b38-ba2e-bc19b985ec75)
+   
+Client Publish: esp32/ambientTemp
+Suhu Udara: Menampilkan suhu tubuh dalam °C.
+Penyesuaian dan Kalibrasi: Jika lingkungan sekitar lebih panas, maka threshold bisa dinaikkan.
 
+2. Setting tampilan Suhu Tubuh
+
+![image](https://github.com/user-attachments/assets/3bc5dff8-5dac-42c9-ab0a-5b5fcbc5e376)
+   
+Client Publish: esp32/objectTemp
+Suhu Tubuh: Menampilkan suhu tubuh dalam °C.
+Penyesuaian dan Kalibrasi: Jika hasil bacaan suhu tidak akurat, lakukan kalibrasi sensor GY90614 agar data lebih akurat.
+
+3. Setting tampilan Suhu Heart Rate
+
+![image](https://github.com/user-attachments/assets/cce12a0c-53f5-4912-a28c-9b15203b86b4)
+   
+Client Publish: esp32/heartRate
+Heart Rate: Menampilkan heart rate dalam BPM.
+Penyesuaian dan Kalibrasi: Jika hasil bacaan herat rate tidak akurat, lakukan kalibrasi sensor MAX30102 agar data lebih akurat.
 
 
 

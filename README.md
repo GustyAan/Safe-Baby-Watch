@@ -1,4 +1,4 @@
-# Safe Baby Watch 
+# Safe Watch 
 Merupakan proyek SmartWatch Pemantau Kesehatan Bayi ini adalah memberikan solusi kesehatan yang inovatif untuk memantau kondisi kesehatan bayi secara real-time. Proyek ini bertujuan untuk membantu orang tua dan pengasuh dalam mendeteksi dini masalah kesehatan bayi, sehingga mereka dapat mengambil tindakan pencegahan atau perawatan yang tepat dengan cepat. Dengan menggunakan teknologi IoT, alat ini memungkinkan pemantauan kesehatan bayi yang lebih praktis, efisien, dan akurat, sehingga memberikan ketenangan bagi orang tua dalam menjaga kesejahteraan bayi mereka.
 
 Peta koneksi 
@@ -19,24 +19,24 @@ DIAGRAM SISTEM
 
 ![image](https://github.com/user-attachments/assets/e3545708-e1d0-4b24-80e6-9357fcf48d4f)
 
-Sistem Safe Baby Watch bekerja dengan sensor MAX30102 yang mendeteksi detak jantung (HR) dan kadar oksigen dalam darah bayi (SPO2), sedangkan sensor GY906 mengukur suhu tubuh bayi  tanpa kontak fisik sensor melalui jam tangan yang terkoneksi dengan internet melalui ESP 12. Data yang dikumpulkan dari kedua sensor ini kemudian diproses oleh modul ESP12, yang berfungsi sebagai pusat pemrosesan data dalam sistem. Layar OLED pada perangkat menampilkan informasi detak jantung dan suhu tubuh bayi secara real-time, memudahkan pemantauan langsung. Jika sistem mendeteksi adanya kondisi abnormal, seperti peningkatan suhu atau perubahan signifikan dalam detak jantung atau turunnya saturasi oksigen, notifikasi otomatis akan dikirimkan sebagai peringatan melalui ponsel pintar yang terkoneksi. Data ini juga dikirimkan melalui koneksi WiFi ke tambilan mobile, memungkinkan pemantauan jarak jauh dan real-time oleh orang tua atau pengasuh. Diagram sistem ini memberikan gambaran jelas tentang koneksi antara sensor dan ESP12, serta aliran data menuju aplikasi untuk pemantauan.
+Sistem Safe Watch bekerja dengan sensor MAX30102 yang mendeteksi detak jantung (HR) sedangkan sensor GY906 mengukur suhu tubuh bayi dan suhu lingkungan tanpa kontak fisik sensor melalui jam tangan yang terkoneksi dengan internet melalui ESP32. Data yang dikumpulkan dari kedua sensor ini kemudian diproses oleh modul ESP32, yang berfungsi sebagai pusat pemrosesan data dalam sistem. Layar OLED pada perangkat menampilkan informasi detak jantung dan suhu tubuh bayi secara real-time, memudahkan pemantauan langsung. Jika sistem mendeteksi adanya kondisi abnormal, seperti peningkatan suhu atau perubahan signifikan dalam detak jantung. Data ini juga dikirimkan melalui koneksi WiFi ke tambilan mobile, memungkinkan pemantauan jarak jauh dan real-time oleh orang tua atau pengasuh. Diagram sistem ini memberikan gambaran jelas tentang koneksi antara sensor dan ESP32, serta aliran data menuju aplikasi untuk pemantauan.
 
-Safe Baby Watch secara garis besar memiliki komponen penting seperti kontroller dan perangkat sensing sebagai berikut:
+Safe Watch secara garis besar memiliki komponen penting seperti kontroller dan perangkat sensing sebagai berikut:
 
-1. **ESP12**:
+1. **ESP32**:
 
 ![image](https://github.com/user-attachments/assets/01c10f11-8491-4afe-9a1a-e402481b7fd1)
 
-ESP12 adalah modul berbasis microcontroller ESP8266 yang memiliki kemampuan Wi-Fi, sehingga dapat mengirim dan menerima data secara nirkabel melalui internet. Pada proyek Safe Baby Watch, ESP12 digunakan sebagai otak utama yang mengumpulkan data dari berbagai sensor, memprosesnya, dan mengirimkan data tersebut ke aplikasi atau platform IoT. Hal ini memungkinkan pemantauan jarak jauh terhadap kondisi kesehatan bayi.
+ESP32 adalah modul berbasis microcontroller ESP8266 yang memiliki kemampuan Wi-Fi, sehingga dapat mengirim dan menerima data secara nirkabel melalui internet. Pada proyek Safe Watch, ESP32 digunakan sebagai otak utama yang mengumpulkan data dari berbagai sensor, memprosesnya, dan mengirimkan data tersebut ke aplikasi atau platform IoT. Hal ini memungkinkan pemantauan jarak jauh terhadap kondisi kesehatan bayi.
 
 3. **Sensor MAX30102**:
    
-MAX30102 adalah sensor optik yang dapat mendeteksi detak jantung dan kadar oksigen dalam darah. Sensor ini bekerja dengan memancarkan cahaya dan mendeteksi refleksi cahaya tersebut dari pembuluh darah di kulit. Pada proyek ini, MAX30102 berguna untuk memantau detak jantung dan saturasi oksigen bayi, sehingga dapat mendeteksi tanda-tanda vital dan memastikan bayi dalam kondisi yang aman. Sensor MAX 30102 memiliki spesifikasi sebagai berikut:
-- Sensor: LED merah dan inframerah untuk mendeteksi detak jantung dan SpO2
+MAX30102 adalah sensor optik yang dapat mendeteksi detak jantung. Sensor ini bekerja dengan memancarkan cahaya dan mendeteksi refleksi cahaya tersebut dari pembuluh darah di kulit. Pada proyek ini, MAX30102 berguna untuk memantau detak jantung, sehingga dapat mendeteksi tanda-tanda vital dan memastikan bayi dalam kondisi yang aman. Sensor MAX 30102 memiliki spesifikasi sebagai berikut:
+- Sensor: LED merah dan inframerah untuk mendeteksi detak jantung
 - Tegangan Operasional: 1.8V untuk inti, 3.3V untuk LED
 - Antarmuka Komunikasi: I2C
 - Arus Rata-rata: 600µA (tergantung pengaturan)
-- Mode Pengukuran: Detak jantung dan oksigen darah (SpO2)
+- Mode Pengukuran: Detak jantung.
 - Rentang Panjang Gelombang LED:
 - LED Merah: 660 nm
 - LED Inframerah: 880 nm
@@ -44,7 +44,7 @@ MAX30102 adalah sensor optik yang dapat mendeteksi detak jantung dan kadar oksig
   Sensor MAX30102 ini sipilih karena memiliki kelebihan sebagai berikut:
 - Penggunaan Daya: Rendah, cocok untuk perangkat wearable
 - Penggunaan: Oximeter, deteksi detak jantung, perangkat medis wearable
-- Dilengkapi dengan algoritma yang dapat membantu dalam pemrosesan sinyal detak jantung dan oksigen dalam darah, sehingga **cocok untuk perangkat wearable dan aplikasi kesehatan**.
+- Dilengkapi dengan algoritma yang dapat membantu dalam pemrosesan sinyal detak jantung, sehingga **cocok untuk perangkat wearable dan aplikasi kesehatan**.
 
 Dengan adanya kelebihan dan spesifikasi diatas, pengambilan data dalam sensor testing dapat dilakukan dengan mekanisme pengambilan data sebagai berikut:
 
@@ -66,9 +66,9 @@ Jika Sensor gagal terinisialisasi:
 
 ![Sensor Invalid](https://github.com/user-attachments/assets/711b09dd-5df4-44f2-adc5-06b53c0a75ee)
 
-Sensor testing ini ditujukan untuk mengetes fungsi sensor dengan memanfaatkan fungsi utamanya yakni mengukur kadar oksigen dalam darah (SpO2) dan denyut jantung menggunakan sensor MAX30102. Pertama, sistem menginisialisasi komunikasi serial untuk mengirim dan menerima data serta mengatur LED indikator sebagai output. Setelah itu, sensor MAX30102 diinisialisasi; jika berhasil, sistem menampilkan pesan "Attach sensor to finger. Press key to start" untuk meminta pengguna menempatkan jari mereka pada sensor. Namun, jika inisialisasi gagal, pesan kesalahan akan muncul untuk memeriksa kembali sambungan daya atau kabel.
+Sensor testing ini ditujukan untuk mengetes fungsi sensor dengan memanfaatkan fungsi utamanya yakni mengukur denyut jantung menggunakan sensor MAX30102. Pertama, sistem menginisialisasi komunikasi serial untuk mengirim dan menerima data serta mengatur LED indikator sebagai output. Setelah itu, sensor MAX30102 diinisialisasi; jika berhasil, sistem menampilkan pesan "Attach sensor to finger. Press key to start" untuk meminta pengguna menempatkan jari mereka pada sensor. Namun, jika inisialisasi gagal, pesan kesalahan akan muncul untuk memeriksa kembali sambungan daya atau kabel.
 
-Setelah sensor terpasang dan pengguna menekan tombol untuk memulai, sistem mengonfigurasi parameter sensor seperti kecerahan LED dan kecepatan sampel. Dalam loop utama, sistem membaca sampel data dari sensor, menyimpan data cahaya merah dan inframerah (IR) dalam buffer, dan menampilkan data ini pada monitor serial. Setelah pengumpulan data, sistem menghitung SpO2 dan denyut jantung, kemudian menampilkannya. Loop ini berjalan terus menerus, memperbarui pembacaan SpO2 dan denyut jantung, hingga kondisi penghentian dicapai.
+Setelah sensor terpasang dan pengguna menekan tombol untuk memulai, sistem mengonfigurasi parameter sensor seperti kecerahan LED dan kecepatan sampel. Dalam loop utama, sistem membaca sampel data dari sensor, menyimpan data cahaya merah dan inframerah (IR) dalam buffer, dan menampilkan data ini pada monitor serial. Setelah pengumpulan data, sistem menghitung denyut jantung, kemudian menampilkannya. Loop ini berjalan terus menerus, memperbarui pembacaan denyut jantung, hingga kondisi penghentian dicapai.
 
 5. **Sensor GY906**:
 GY906 adalah sensor inframerah yang dapat mengukur suhu tanpa kontak fisik (non-contact) denganspesifikasi sebagai berikut:
@@ -107,12 +107,12 @@ Test Solder (suhu tinggi):
 
 ![image](https://github.com/user-attachments/assets/9a97053b-3404-4814-ab52-21849c30fd0d)
 
-Sistem dan cara kerja testing sensor ini menggunakan sensor GY906 dan layar OLED untuk menampilkan suhu secara real-time dalam sebuah aplikasi monitoring, seperti "SAFE BABYWATCH." Cara kerja sistem dimulai dengan inisialisasi pustaka dan variabel untuk layar OLED dan sensor suhu, yang bertugas membaca suhu objek dari lingkungan sekitar. Program mengonfigurasi OLED display pada fungsi `setup`, termasuk pengaturan warna teks dan resolusi tampilan, serta mengaktifkan sensor inframerah agar dapat mengambil data suhu.
+Sistem dan cara kerja testing sensor ini menggunakan sensor GY906 dan layar OLED untuk menampilkan suhu secara real-time dalam sebuah aplikasi monitoring, seperti "SAFE WATCH." Cara kerja sistem dimulai dengan inisialisasi pustaka dan variabel untuk layar OLED dan sensor suhu, yang bertugas membaca suhu objek dari lingkungan sekitar. Program mengonfigurasi OLED display pada fungsi `setup`, termasuk pengaturan warna teks dan resolusi tampilan, serta mengaktifkan sensor inframerah agar dapat mengambil data suhu.
 
-Selanjutnya, pada fungsi task utama, sistem membaca suhu secara berulang dan memperbarui tampilan OLED. Proses ini melibatkan pengambilan data suhu dari sensor inframerah, membersihkan buffer tampilan OLED agar tidak ada residu tampilan sebelumnya, dan menampilkan teks pengaman "SAFE BABYWATCH" serta label suhu yang menunjukkan nilai terbaru. Suhu yang diperoleh dari sensor diubah menjadi string untuk memudahkan penampilannya pada layar, bersama dengan satuan suhu (derajat Celsius). Setelah proses ini selesai, OLED display diperbarui, dan loop berulang, memungkinkan pembacaan suhu terkini untuk ditampilkan terus-menerus pada layar sebagai informasi real-time.
+Selanjutnya, pada fungsi task utama, sistem membaca suhu secara berulang dan memperbarui tampilan OLED. Proses ini melibatkan pengambilan data suhu dari sensor inframerah, membersihkan buffer tampilan OLED agar tidak ada residu tampilan sebelumnya, dan menampilkan teks pengaman "SAFE WATCH" serta label suhu yang menunjukkan nilai terbaru. Suhu yang diperoleh dari sensor diubah menjadi string untuk memudahkan penampilannya pada layar, bersama dengan satuan suhu (derajat Celsius). Setelah proses ini selesai, OLED display diperbarui, dan loop berulang, memungkinkan pembacaan suhu terkini untuk ditampilkan terus-menerus pada layar sebagai informasi real-time.
 
 6. **OLED 0.96**:
-OLED 0.96 adalah layar kecil berukuran 0.96 inci yang menggunakan teknologi OLED (Organic Light Emitting Diode). Layar ini memiliki tampilan yang jernih dan kontras tinggi sehingga cocok untuk menampilkan informasi penting dalam ruang yang terbatas. Dalam proyek ini, OLED 0.96 digunakan untuk menampilkan data seperti detak jantung, kadar oksigen, dan suhu bayi secara langsung, memudahkan pemantauan oleh pengguna di lokasi yang sama.
+OLED 0.96 adalah layar kecil berukuran 0.96 inci yang menggunakan teknologi OLED (Organic Light Emitting Diode). Layar ini memiliki tampilan yang jernih dan kontras tinggi sehingga cocok untuk menampilkan informasi penting dalam ruang yang terbatas. Dalam proyek ini, OLED 0.96 digunakan untuk menampilkan data seperti detak jantung, suhu lingkungan, dan suhu bayi secara langsung, memudahkan pemantauan oleh pengguna di lokasi yang sama.
 
 Komponen-komponen ini bekerja bersama-sama untuk memantau kondisi kesehatan bayi secara real-time, memberikan peringatan dini jika ada anomali kondisi bayi, dan memungkinkan pemantauan jarak jauh oleh orang tua atau pengasuh melalui internet.
 
@@ -143,9 +143,12 @@ Client Publish: esp32/heartRate
 Heart Rate: Menampilkan heart rate dalam BPM.
 Penyesuaian dan Kalibrasi: Jika hasil bacaan herat rate tidak akurat, lakukan kalibrasi sensor MAX30102 agar data lebih akurat.
 
+4. Tes koneksi WIFI ESP32
 
+![image](https://github.com/user-attachments/assets/f1723e3d-c1bc-4413-9a46-a10e712eec22)
 
-
+Pengujian koneksi WiFi pada ESP32 dengan metode WiFi Scan bertujuan untuk memastikan bahwa modul ESP32 dapat mendeteksi dan menampilkan daftar jaringan WiFi yang ada di sekitarnya. Proses ini berguna untuk memverifikasi bahwa antena dan modul WiFi pada ESP32 berfungsi dengan baik serta memastikan bahwa perangkat berada dalam jangkauan jaringan yang diinginkan. Metode ini juga membantu untuk mengetahui kekuatan sinyal (RSSI) dari masing-masing jaringan, sehingga kita dapat memilih jaringan yang paling kuat atau stabil untuk koneksi yang optimal.
+adsadad
 
 
 

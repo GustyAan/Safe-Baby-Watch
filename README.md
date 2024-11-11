@@ -6,11 +6,12 @@
 Jobdesk: Project Manager, Mengkoordinasi dan melakukan pengecekan menyeluruh untuk memastikan bahwa setiap bekerja sesuai dengan tanggung jawab masing-masing dan mengikuti timeline proyek.
 2. Gusty Anugrah (2122600040)
 Jobdesk: Team Hardware, tugas tim hardware meliputi perancangan dan pengujian tampilan aplikasi user, pengujian awal prototipe, perakitan komponen dalam case, dan pengujian akhir untuk memastikan semua fungsi perangkat keras berjalan sesuai spesifikasi.
+3. Muhammad Iqbal Hanafi (2122600043)
+Jobdesk: Team Software, Merancang dan mengimplementasikan fitur-fitur aplikasi sesuai spesifikasi proyek, memungkinkan komunikasi dan fungsi yang baik antara software dan hardware.
+4. Altair Arrazi (2122600044)
 
-3. isi
-4. isi
-5. isi
-6. isi
+5. Sulthan Al Jaffan Nooruzaman (2122600045)
+6. Bachtiar Arif Nurdiansyah (2122600058)
 
 **PROJECT PBL; PROGRAM STUDI SARJANA TERAPAN TEKNIK ELEKTRONIKA, DEPARTEMEN TEKNIK ELEKTRO, POLITEKNIK ELEKTRONIKA NEGERI SURABAYA, 2024**
 

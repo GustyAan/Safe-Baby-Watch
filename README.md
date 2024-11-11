@@ -267,3 +267,7 @@ Dengan menggunakan aplikasi MQTT, pengguna dapat mengonfigurasi dashboard untuk 
    f. Pengelolaan Koneksi: Program ini memastikan bahwa ESP32 selalu terhubung dengan broker MQTT. Jika terputus, perangkat akan mencoba untuk tersambung kembali. Meskipun ini merupakan praktik pengelolaan koneksi yang baik, hal ini tidak terkait langsung dengan keamanan data atau autentikasi.
 
    g. Pengiriman Data: Data yang dikirimkan mencakup suhu, dan detak jantung, yang bisa dianggap sebagai data sensitif. Karena data ini tidak dienkripsi, ada risiko bahwa informasi tersebut bisa diakses oleh pihak yang tidak berwenang.
+
+
+**VIDEO SIMULASI SAFE BABY WATCH :**
+https://drive.google.com/file/d/1p6piSOGaIH5-5Plz2Y6_aSaoBWN19uLC/view?usp=drivesdk

@@ -2,9 +2,9 @@
 
 **Anggota Kelompok:**
 
-1. isi
-2. Gusty Anugrah
-
+1. Balqis Sofi Nurani (2122600034)
+Jobdesk: Project Manager, Mengkoordinasi dan melakukan pengecekan menyeluruh untuk memastikan bahwa setiap bekerja sesuai dengan tanggung jawab masing-masing dan mengikuti timeline proyek.
+2. Gusty Anugrah (2122600040)
 Jobdesk: Team Hardware, tugas tim hardware meliputi perancangan dan pengujian tampilan aplikasi user, pengujian awal prototipe, perakitan komponen dalam case, dan pengujian akhir untuk memastikan semua fungsi perangkat keras berjalan sesuai spesifikasi.
 
 3. isi

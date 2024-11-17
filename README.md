@@ -9,7 +9,7 @@ Jobdesk: Team Hardware, tugas tim hardware meliputi perancangan dan pengujian ta
 3. Muhammad Iqbal Hanafi (2122600043)
 Jobdesk: Team Software, Merancang dan mengimplementasikan fitur-fitur aplikasi sesuai spesifikasi proyek, memungkinkan komunikasi dan fungsi yang baik antara software dan hardware.
 4. Altair Arrazi (2122600044)
-
+Jobdesk: UI/UX, Membuat wireframe, mockup, elemen visual, dan design system antarmuka aplikasi monitoring.
 5. Sulthan Al Jaffan Nooruzaman (2122600045)
 6. Bachtiar Arif Nurdiansyah (2122600058)
 

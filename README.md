@@ -271,4 +271,5 @@ Dengan menggunakan aplikasi MQTT, pengguna dapat mengonfigurasi dashboard untuk 
 
 
 **VIDEO SIMULASI SAFE BABY WATCH :**
+https://youtu.be/MlmoVDbDHR8
 https://drive.google.com/file/d/1p6piSOGaIH5-5Plz2Y6_aSaoBWN19uLC/view?usp=drivesdk

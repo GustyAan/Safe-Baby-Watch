@@ -9,9 +9,11 @@ Jobdesk: Team Hardware, tugas tim hardware meliputi perancangan dan pengujian ta
 3. Muhammad Iqbal Hanafi (2122600043)
 Jobdesk: Team Software, Merancang dan mengimplementasikan fitur-fitur aplikasi sesuai spesifikasi proyek, memungkinkan komunikasi dan fungsi yang baik antara software dan hardware.
 4. Altair Arrazi (2122600044)
+Jobdesk: Bertugas sebagai aktor pada pembuatan vidio simulasi dan vidio iklan.
 5. Sulthan Al Jaffan Nooruzaman (2122600045)
 Jobdesk: UI/UX Designer, Membuat wireframe, mockup, elemen visual, dan design system antarmuka aplikasi monitoring.
-7. Bachtiar Arif Nurdiansyah (2122600058)
+6. Bachtiar Arif Nurdiansyah (2122600058)
+Jobdesk: Team Data Analisis, bertugas untuk mengolah, menganalisis, dan menginterpretasikan data yang dikumpulkan dari sistem SafeBabyWatch.
 
 **PROJECT PBL; PROGRAM STUDI SARJANA TERAPAN TEKNIK ELEKTRONIKA, DEPARTEMEN TEKNIK ELEKTRO, POLITEKNIK ELEKTRONIKA NEGERI SURABAYA, 2024**
 

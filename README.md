@@ -273,6 +273,8 @@ Dengan menggunakan aplikasi MQTT, pengguna dapat mengonfigurasi dashboard untuk 
 
    g. Pengiriman Data: Data yang dikirimkan mencakup suhu, dan detak jantung, yang bisa dianggap sebagai data sensitif. Karena data ini tidak dienkripsi, ada risiko bahwa informasi tersebut bisa diakses oleh pihak yang tidak berwenang.
 
+**SLIDE PRESENTASI :**
+https://www.canva.com/design/DAGS5IFts34/tgPJ3RN0DBXsLH5GBZOYkg/edit?utm_content=DAGS5IFts34&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
 **VIDEO SIMULASI SAFE BABY WATCH :**
 https://youtu.be/MlmoVDbDHR8

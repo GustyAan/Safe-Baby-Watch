@@ -1,5 +1,7 @@
 # Safe Watch 
 
+![safebabywatch-poster](https://github.com/user-attachments/assets/674bd3f7-89dd-48a9-a01f-0044dcd77d1c)
+
 **Anggota Kelompok:**
 
 1. Balqis Sofi Nurani (2122600034)

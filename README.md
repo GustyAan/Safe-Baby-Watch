@@ -282,3 +282,6 @@ https://drive.google.com/file/d/1p6piSOGaIH5-5Plz2Y6_aSaoBWN19uLC/view?usp=drive
 
 **VIDEO IKLAN SAFE BABY WATCH :**
 https://youtu.be/NoWd_11aZq8
+
+VIDEO PENERAPAN MQTT
+https://youtu.be/ztUINOL5qe0?si=1-UR7j5w8xU_Xcno
